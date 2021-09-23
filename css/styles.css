@@ -41,16 +41,16 @@ h3 {
   font-weight: 400;
 }
 
-#showcase {
+.showcase {
   position: relative;
   width: 100%;
   height: 73vh;
-  background: url("images/misc/home-bg.jpg") no-repeat center center/cover;
+  background: url("../images/misc/home-bg.jpg") no-repeat center center/cover;
   border-bottom: 7px solid var(--secondary-color);
   margin-bottom: 50px;
 }
 
-#showcase::after {
+.showcase::after {
   content: "";
   position: absolute;
   top: 0;
@@ -60,14 +60,14 @@ h3 {
   z-index: 1;
 }
 
-#showcase-top {
+.showcase-top {
   width: 100%;
   position: relative;
   z-index: 2;
   height: 90px;
 }
 
-#showcase-top > img {
+.showcase-top img {
   position: absolute;
   top: 40%;
   left: 5%;
@@ -75,7 +75,7 @@ h3 {
   transform: translate(-1%, -35%);
 }
 
-#showcase-top > a {
+.showcase-top .auth-link {
   position: absolute;
   top: 40%;
   right: 0;
@@ -99,7 +99,7 @@ h3 {
   font-size: 28px;
   padding-top: 55px;
   padding-bottom: 16px;
-  z-index: 20;
+  z-index: 10;
 }
 
 .hero-header > h3 {
@@ -242,6 +242,75 @@ ul {
   margin-bottom: 60px;
 }
 
+/**** SignIn & SignUP ****/
+#signinPage .showcase {
+  height: 100vh;
+}
+
+#signupPage .showcase {
+  height: 110vh;
+}
+
+.auth-container {
+  position: relative;
+  max-width: 380px;
+  margin: 40px auto 0;
+  background-color: hsla(0deg, 0%, 0%, 0.6);
+  width: 100%;
+  height: 450px;
+  z-index: 2;
+}
+
+#signupPage .auth-container {
+  height: 480px;
+}
+
+
+.signin-up {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+}
+
+form {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 30px;
+}
+form > label {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+form > input {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+  display: block;
+  z-index: 40;
+}
+
+.otherwise {
+  font-weight: 400;
+  color: rgb(160, 137, 137);
+  margin-bottom: 30px;
+}
+.signin-up div a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.recaptcha-msg {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+
 /***** Footer *****/
 footer {
   color: hsla(0deg, 0%, 60%, 0.7);
@@ -273,6 +342,14 @@ footer > h3 {
   background: var(--primary-color);
   padding: 4px 7px;
   border-radius: 2px;
+}
+
+.btn-lg {
+  text-align: center;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  padding: 12px;
+  width: 100%;
 }
 
 .btn-xl {
@@ -313,11 +390,11 @@ footer > h3 {
 }
 
 @media screen and (min-width: 550px) {
-  #showcase {
+  .showcase {
     height: 101vh;
   }
 
-  #showcase-top > img {
+  .showcase-top img {
     width: 108px;
     top: 45%;
     left: 55px;
@@ -363,7 +440,7 @@ footer > h3 {
 }
 
 @media screen and (min-width: 650px) and (max-width: 739px) {
-  #showcase {
+  .showcase {
     height: 99vh;
   }
   .cta-label {
@@ -392,10 +469,10 @@ footer > h3 {
 }
 
 @media screen and (min-width: 951px) {
-  #showcase {
+  .showcase {
     height: 97vh;
   }
-  #showcase-top > img {
+  .showcase-top img {
     width: 132px;
   }
 
@@ -514,10 +591,10 @@ footer > h3 {
 }
 
 @media screen and (min-width: 1450px) {
-  #showcase {
+  .showcase {
     height: 101vh;
   }
-  #showcase-top > img {
+  .showcase-top img {
     width: 164px;
   }
 
