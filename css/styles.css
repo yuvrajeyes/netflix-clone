@@ -1,0 +1,557 @@
+:root {
+  --primary-color: #e50914;
+  --secondary-color: hsla(0deg, 0%, 20%, 0.9);
+  --dark-color: #141414;
+  --light-color: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+#showcase {
+  position: relative;
+  width: 100%;
+  height: 73vh;
+  background: url("images/misc/home-bg.jpg") no-repeat center center/cover;
+  border-bottom: 7px solid var(--secondary-color);
+  margin-bottom: 50px;
+}
+
+#showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#showcase-top {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 90px;
+}
+
+#showcase-top > img {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  width: 89px;
+  transform: translate(-1%, -35%);
+}
+
+#showcase-top > a {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  transform: translate(-50%, -35%);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+}
+
+.hero-header > div > h2 {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-self: center;
+  text-align: center;
+  font-size: 28px;
+  padding-top: 55px;
+  padding-bottom: 16px;
+  z-index: 20;
+}
+
+.hero-header > h3 {
+  padding-bottom: 16px;
+  z-index: 20;
+}
+
+.cta {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  z-index: 10;
+}
+
+.cta-label {
+  width: 90%;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.3;
+  justify-self: center;
+  margin-bottom: 10px;
+}
+
+.cta-email-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.email-input-textField {
+  width: 90%;
+  max-width: 440px;
+  margin: 0 auto;
+  height: 48px;
+  align-self: center;
+  padding-left: 10px;
+  margin-bottom: 14px;
+}
+
+.submit-email {
+  background-color: var(--primary-color);
+  width: max-content;
+  justify-self: center;
+  text-align: center;
+}
+
+/**** Jumbotron ****/
+.jumbotron-1,
+.jumbotron-2,
+.jumbotron-3 {
+  border-bottom: 7px solid var(--secondary-color);
+  padding: 50px 5%;
+}
+
+.jumbotron-3 {
+  margin-bottom: 50px;
+}
+
+.jumbotron-1 > div,
+.jumbotron-2 > div,
+.jumbotron-3 > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.jumbotron-text h2 {
+  margin-bottom: 16px;
+}
+
+.jumbotron-text h3 {
+  font-size: 18px;
+  padding: 0 2%;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.jumbotron-2 .jumbotron-img > img {
+  width: 200px;
+  justify-self: center;
+}
+
+/**** FAQs ****/
+.faq-container {
+  border-bottom: 7px solid var(--secondary-color);
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--light-color);
+  font-size: 18px;
+}
+
+.faq-header {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.faq-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 20px 9px 20px;
+  background-color: var(--secondary-color);
+  border-top: 8px solid black;
+}
+
+.faq li div {
+  align-self: center;
+}
+
+.faq-answer-show {
+  display: block !important;
+  opacity: 1 !important;
+  transition: all 1000 ease-in;
+}
+
+.faq-answer {
+  display: none;
+
+  padding: 24px 20px;
+  line-height: 1.35;
+  background-color: var(--secondary-color);
+  border-top: 2px solid black;
+}
+
+.faq .cta {
+  margin-bottom: 60px;
+}
+
+/***** Footer *****/
+footer {
+  color: hsla(0deg, 0%, 60%, 0.7);
+  font-size: 13px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 840px;
+  padding-bottom: 80px;
+}
+
+footer > h3 {
+  font-size: 17px;
+  margin: 80px 0 30px;
+  color: hsla(0deg, 0%, 60%, 0.6);
+}
+
+.foo-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.foo-section div {
+  margin: 8px 0;
+}
+
+/* Buttons */
+
+.btn {
+  background: var(--primary-color);
+  padding: 4px 7px;
+  border-radius: 2px;
+}
+
+.btn-xl {
+  width: max-content;
+  padding: 11px 16px;
+  border-radius: 2px;
+}
+
+/* Icons */
+
+.fwd-icon {
+  margin-left: 4px;
+  padding: 3px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transition: all 0.3s ease;
+  transform: rotate(-45deg);
+}
+
+.add-icon {
+  width: 5%;
+  fill: white;
+  filter: opacity(0.3) drop-shadow(0 0 0 white);
+  cursor: pointer;
+}
+
+.add-icon-remove {
+  display: none !important;
+}
+
+.cross-icon {
+  width: 5%;
+  transform: rotate(45deg);
+  fill: white;
+  filter: opacity(0.2) drop-shadow(0 0 0 white);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 550px) {
+  #showcase {
+    height: 101vh;
+  }
+
+  #showcase-top > img {
+    width: 108px;
+    top: 45%;
+    left: 55px;
+  }
+
+  .auth-link {
+    padding: 8px 16px;
+    border-radius: 3px;
+    margin-right: 15px;
+  }
+
+  .hero-header > div > h2 {
+    font-size: 48px;
+    max-width: 520px;
+    padding-top: 120px;
+  }
+
+  .hero-header > h3 {
+    font-size: 26px;
+  }
+
+  .cta-label {
+    font-size: 19px;
+    max-width: 420px;
+  }
+
+  .email-input-textField {
+    width: 480px;
+  }
+
+  .faq {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    font-size: 25px;
+  }
+
+  .foo-section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 739px) {
+  #showcase {
+    height: 99vh;
+  }
+  .cta-label {
+    font-size: 18px;
+    max-width: 450px;
+  }
+
+  .email-input-textField {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .cta-label {
+    font-size: 21px;
+  }
+
+  .email-input-textField {
+    height: 58px;
+    max-width: 500px;
+  }
+
+  .foo-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 951px) {
+  #showcase {
+    height: 97vh;
+  }
+  #showcase-top > img {
+    width: 132px;
+  }
+
+  .hero-header > div > h2 {
+    padding-top: 140px;
+  }
+
+  .hero-header > h3 {
+    margin-bottom: 12px;
+  }
+
+  .cta-label {
+    font-size: 19px;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+
+  .cta-email-form {
+    display: flex;
+    height: 60px;
+  }
+
+  .email-input-textField {
+    height: 60px;
+    font-size: 17px;
+    max-width: 400px;
+  }
+
+  .submit-email {
+    font-size: 26px;
+    width: 220px;
+    align-self: flex-end;
+    height: 60px;
+    z-index: 20;
+  }
+
+  .submit-email > div {
+    margin-top: 5px;
+  }
+
+  .fwd-icon {
+    margin-bottom: 3px;
+    padding: 5px;
+    border-width: 0 3px 3px 0;
+  }
+
+  .jumbotron-1,
+  .jumbotron-2,
+  .jumbotron-3 {
+    border-bottom: 7px solid var(--secondary-color);
+    padding: 50px 5%;
+  }
+
+  .jumbotron-1 > div,
+  .jumbotron-2 > div,
+  .jumbotron-3 > div {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 50% 48%;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .jumbotron-2 .jumbotron-text {
+    justify-self: start;
+  }
+
+  .jumbotron-2 .jumbotron-img {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
+
+  .jumbotron-2 .jumbotron-img img {
+    width: 240px;
+  }
+
+  .jumbotron-text {
+    max-width: 800px;
+    align-self: center;
+  }
+
+  .jumbotron-text h2 {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .jumbotron-text h3 {
+    padding: 0;
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+
+  .faq {
+    width: 70%;
+    font-size: 28px;
+  }
+
+  .faq-header {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .faq li {
+    padding: 16px 22px 16px 22px;
+    border-top: 8px solid black;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .jumbotron-1 > div,
+  .jumbotron-2 > div,
+  .jumbotron-3 > div {
+    padding: 0 10%;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  #showcase {
+    height: 101vh;
+  }
+  #showcase-top > img {
+    width: 164px;
+  }
+
+  .hero-header > div > h2 {
+    padding-top: 155px;
+    font-size: 64px;
+    max-width: 700px;
+  }
+
+  .cta-email-form {
+    height: 66px;
+  }
+
+  .email-input-textField {
+    height: 66px;
+    font-size: 17px;
+    max-width: 460px;
+  }
+
+  .submit-email {
+    font-size: 26px;
+    width: 250px;
+    align-self: flex-end;
+    height: 66px;
+    z-index: 20;
+  }
+
+  .submit-email > div {
+    margin-top: 7px;
+  }
+
+  .fwd-icon {
+    margin-bottom: 3px;
+    padding: 5px;
+    border-width: 0 3px 3px 0;
+  }
+}
