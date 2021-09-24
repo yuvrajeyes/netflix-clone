@@ -18,6 +18,10 @@ body {
   color: #fff;
 }
 
+.low-opacity {
+  opacity: 0.5;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -37,7 +41,7 @@ p {
   color: #fff;
 }
 
-h3 {
+h3, p {
   font-weight: 400;
 }
 
@@ -252,10 +256,11 @@ ul {
 }
 
 .auth-container {
+  width: 90%;
   position: relative;
   max-width: 380px;
   margin: 40px auto 0;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0deg, 0%, 0%, 0.7);
   width: 100%;
   height: 450px;
   z-index: 2;
@@ -310,6 +315,129 @@ form > input {
   font-size: 13px;
 }
 
+/***** Series/Films *****/
+
+.browse {
+  height: 66vh;
+  background: url("../images/misc/joker1.jpg") no-repeat top;
+  background-size: cover;
+  opacity: 0.9;
+  background-color: hsla(0deg, 100%, 0%, 1);
+  box-shadow: inset 20px 20px 250px black;
+}
+
+.series {
+  position: absolute;
+  top: 45%;
+  right: 90px;
+  transform: translate(0, -15%);
+}
+
+.films {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  transform: translate(0, -15%);
+}
+
+.featured-movie {
+  width: 90%;
+  margin: 15% auto 0;
+  z-index: 10;
+}
+
+.featured-header {
+  margin-bottom: 16px;
+}
+
+.featured-description {
+  max-width: 475px;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.play-btn a {
+  color: #000;
+}
+
+.genre {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+}
+
+.genre h2 {
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.drama {
+  margin-top: -10px;
+}
+
+.genre div {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr;
+}
+
+.genre > div > div:hover {
+  transform: scale(1.3);
+  transition: 0.5s transform ease-in-out;
+}
+
+.drama-item1-selected {
+  display: none;
+  position: relative;
+}
+
+.show-card {
+  width: 80%;
+  margin: 0 auto;
+  display: flex !important;
+  opacity: 1 !important;
+  transition: all 1000 ease-in;
+}
+
+.item-description {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.item-description h3{
+  margin-bottom: 30px;
+}
+
+.item-description p {
+  max-width: 412px;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.drama-item1-selected > .item-selected-img {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.closeicon {
+  position: relative;
+  width: 20px;
+  bottom: 100%;
+  left: 95%;
+  cursor: pointer;
+}
+
+.closecard {
+  display: none !important;
+}
+
 
 /***** Footer *****/
 footer {
@@ -342,6 +470,11 @@ footer > h3 {
   background: var(--primary-color);
   padding: 4px 7px;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
 
 .btn-lg {
@@ -350,12 +483,49 @@ footer > h3 {
   border-radius: 2px;
   padding: 12px;
   width: 100%;
+  cursor: pointer;
+}
+
+.btn-lg:hover {
+  opacity: 0.9;
 }
 
 .btn-xl {
   width: max-content;
   padding: 11px 16px;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn-xl:hover {
+  opacity: 0.9;
+}
+
+.play-btn {
+  background-color: #fff;
+  color: #000;
+  width: max-content;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  opacity: 0.9;
+}
+
+.play-btn-lg {
+  background-color: #fff;
+  color: #000;
+  width: max-content;
+  font-size: 20px;
+  padding: 8px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.play-btn-lg:hover {
+  opacity: 0.9;
 }
 
 /* Icons */
@@ -387,6 +557,12 @@ footer > h3 {
   fill: white;
   filter: opacity(0.2) drop-shadow(0 0 0 white);
   cursor: pointer;
+}
+
+@media screen and (min-width: 440px) {
+  .genre > div {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 550px) {
@@ -437,6 +613,27 @@ footer > h3 {
   .foo-section {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .featured-movie {
+    margin-top: 280px;
+  }
+
+  .featured-description > p {
+    color: white;
+  }
+
+  .genre {
+    text-align: left;
+    width: 85%;
+  }
+
+  .genre > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .item-description, .drama-item1-selected-show, .show-card {
+    width: 85%;
+  }
 }
 
 @media screen and (min-width: 650px) and (max-width: 739px) {
@@ -464,6 +661,22 @@ footer > h3 {
   }
 
   .foo-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .series {
+    left: 25%;
+  }
+
+  .films {
+    left: 33%;
+  }
+
+  .genre, .item-description, .drama-item1-selected-show, .show-card {
+    width: 90%;
+  }
+
+  .genre > div {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -580,6 +793,22 @@ footer > h3 {
     padding: 16px 22px 16px 22px;
     border-top: 8px solid black;
   }
+
+  .series {
+    left: 21.5%;
+  }
+
+  .films {
+    left: 28.5%;
+  }
+
+  .genre > div {
+    grid-template-columns: repeat(5, 1fr);;
+  }
+  
+  .genre > div > div:hover {
+    transform: scale(1.3);
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -630,5 +859,9 @@ footer > h3 {
     margin-bottom: 3px;
     padding: 5px;
     border-width: 0 3px 3px 0;
+  }
+
+  .browse {
+    background-size: contain;
   }
 }
