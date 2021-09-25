@@ -18,10 +18,6 @@ body {
   color: #fff;
 }
 
-.low-opacity {
-  opacity: 0.5;
-}
-
 a {
   text-decoration: none;
   color: #fff;
@@ -61,7 +57,7 @@ h3, p {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: -1;
 }
 
 .showcase-top {
@@ -108,7 +104,7 @@ h3, p {
 
 .hero-header > h3 {
   padding-bottom: 16px;
-  z-index: 20;
+  z-index: 10;
 }
 
 .cta {
@@ -150,6 +146,14 @@ h3, p {
   width: max-content;
   justify-self: center;
   text-align: center;
+}
+
+.submit-email input[type="submit"]{
+  background-color: var(--primary-color);
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /**** Jumbotron ****/
@@ -263,7 +267,7 @@ ul {
   background-color: hsla(0deg, 0%, 0%, 0.7);
   width: 100%;
   height: 450px;
-  z-index: 2;
+  z-index: 10;
 }
 
 #signupPage .auth-container {
@@ -277,26 +281,33 @@ ul {
   padding: 40px 0 0;
 }
 
-form {
+#form {
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   width: 100%;
   margin-bottom: 30px;
 }
-form > label {
+
+#form > label {
   display: block;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 25px;
 }
 
-form > input {
+#form > input {
   width: 100%;
   margin-bottom: 16px;
   padding: 10px;
   display: block;
-  z-index: 40;
+  z-index: 10;
+}
+
+#form > input[type="submit"] {
+  font-size: 20px;
+  color: #fff;
+  border: 0;
 }
 
 .otherwise {
@@ -342,7 +353,7 @@ form > input {
 
 .featured-movie {
   width: 90%;
-  margin: 15% auto 0;
+  margin: 14% auto 0;
   z-index: 10;
 }
 
@@ -361,12 +372,10 @@ form > input {
 }
 
 .genre {
-  text-align: center;
-  width: 75%;
-  margin: 0 auto;
+  width: 85%;
+  margin: 10px auto 0;
   margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
   flex-direction: column;
 }
 
@@ -382,7 +391,12 @@ form > input {
 .genre div {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-item > img {
+  width: 205%;
+  height: 100%px;
 }
 
 .genre > div > div:hover {
@@ -390,13 +404,13 @@ form > input {
   transition: 0.5s transform ease-in-out;
 }
 
-.drama-item1-selected {
-  display: none;
+.card-selected {
+  display: none !important;
   position: relative;
 }
 
 .show-card {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex !important;
   opacity: 1 !important;
@@ -420,7 +434,11 @@ form > input {
   margin-bottom: 20px;
 }
 
-.drama-item1-selected > .item-selected-img {
+.item-description > div {
+  margin-bottom: 24px;
+}
+
+.card-selected > .item-selected-img {
   display: block;
   width: 100%;
   position: relative;
@@ -428,9 +446,9 @@ form > input {
 
 .closeicon {
   position: relative;
-  width: 20px;
+  width: 16px;
   bottom: 100%;
-  left: 95%;
+  left: 93%;
   cursor: pointer;
 }
 
@@ -438,6 +456,55 @@ form > input {
   display: none !important;
 }
 
+/***** Video *****/
+
+.bg {
+  position: relative;
+}
+
+.blur_1px {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1px);
+  z-index: -1;
+}
+
+.blur_2px {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.blur_3px {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+#video-container {
+  width: 80%; 
+  max-width: 720px;
+  max-height: 60vh;
+  position: sticky;
+  bottom: 30vh;
+  left: 10%;
+  margin: 0 auto; 
+  height: max-content;
+  border: 1px solid white;
+  display: block;
+  overflow: hidden;
+}
 
 /***** Footer *****/
 footer {
@@ -492,9 +559,9 @@ footer > h3 {
 
 .btn-xl {
   width: max-content;
-  padding: 11px 16px;
+  padding: 16px 16px;
   border-radius: 2px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .btn-xl:hover {
@@ -532,6 +599,7 @@ footer > h3 {
 
 .fwd-icon {
   margin-left: 4px;
+  margin-bottom: 2px;
   padding: 3px;
   border: solid #fff;
   border-width: 0 2px 2px 0;
@@ -561,7 +629,7 @@ footer > h3 {
 
 @media screen and (min-width: 440px) {
   .genre > div {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -623,16 +691,15 @@ footer > h3 {
   }
 
   .genre {
-    text-align: left;
     width: 85%;
-  }
-
-  .genre > div {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .item-description, .drama-item1-selected-show, .show-card {
     width: 85%;
+  }
+
+  #video-container {
+    bottom: 27vh;
   }
 }
 
@@ -647,6 +714,24 @@ footer > h3 {
 
   .email-input-textField {
     max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .show-card {
+    flex-direction: row;
+  }
+
+  .closeicon {
+    position: relative;
+    width: 20px;
+    bottom: 100%;
+    left: 93%;
+    cursor: pointer;
+  }
+
+  #video-container {
+    bottom: 25vh;
   }
 }
 
@@ -678,6 +763,10 @@ footer > h3 {
 
   .genre > div {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .video-container {
+    bottom: 20vh;
   }
 }
 
@@ -720,6 +809,10 @@ footer > h3 {
     align-self: flex-end;
     height: 60px;
     z-index: 20;
+  }
+
+  .submit-email input[type="submit"]{
+    font-size: 24px;
   }
 
   .submit-email > div {
@@ -820,6 +913,9 @@ footer > h3 {
 }
 
 @media screen and (min-width: 1450px) {
+  .btn-xl {
+    padding-top: 18px;
+  }
   .showcase {
     height: 101vh;
   }

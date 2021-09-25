@@ -17,12 +17,12 @@
     
         <div class="auth-container">
             <div class="signin-up">
-                <form action="_self" method="get">
+                <form id="form" action="browse.html">
                     <label for="SignIn">Sign In</label>
-                    <input type="email" name='userid' placeholder="Email address">
-                    <input type="password" name="password" id="password" placeholder="Password">
-                    <div class="btn-lg btn">Sign In </div>
-                </form>
+                    <input type="email" name='userid' placeholder="Email address" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required minlength="8" maxlength="30">
+                    <input type="submit" class="btn-lg btn submit-form" value="Sign In"/>
+                  </form>
                 <div class="otherwise">New to Netflix? <a href="signup.html">Sign up now.</a></div>
                 <div class="recaptcha-msg">This page is protected by Google reCAPTCHA.</div>
             </div>
