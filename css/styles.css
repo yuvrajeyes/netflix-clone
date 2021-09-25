@@ -353,7 +353,7 @@ ul {
 
 .featured-movie {
   width: 90%;
-  margin: 14% auto 0;
+  margin: 12% auto 0;
   z-index: 10;
 }
 
@@ -462,33 +462,13 @@ ul {
   position: relative;
 }
 
-.blur_1px {
+.opacity_0_5 {
   position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(1px);
-  z-index: -1;
-}
-
-.blur_2px {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(2px);
-  z-index: -1;
-}
-
-.blur_3px {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(3px);
+  filter: opacity(0.5);
   z-index: -1;
 }
 
@@ -559,7 +539,7 @@ footer > h3 {
 
 .btn-xl {
   width: max-content;
-  padding: 16px 16px;
+  padding: 10px 16px;
   border-radius: 2px;
   /* cursor: pointer; */
 }

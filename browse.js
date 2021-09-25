@@ -35,7 +35,7 @@ function showItem(e) {
 
 function playVideo(e) {
   // blur whole page when video pop-up
-  browse.classList.add("blur_2px");
+  browse.classList.add("opacity_0_5");
   // show video
   vdo.style.display = "block";
 }
@@ -50,7 +50,7 @@ window.onload = function () {
       // set current time to zero
       vdo.children[0].currentTime = 0;
       // remove blur_2px class
-      browse.classList.remove("blur_2px");
+      browse.classList.remove("opacity_0_5");
     }
   };
 };
