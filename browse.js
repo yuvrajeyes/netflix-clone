@@ -19,18 +19,19 @@ plays.forEach((play) => {
   play.addEventListener("click", playVideo);
 });
 
-function closeItem(e) {
-  // Grab the parent element from DOM
-  let parent = this.parentElement.parentElement;
-  // Add closecard class
-  parent.classList.remove("show-card");
-}
-
 function showItem(e) {
   // Grab the item from DOM
   let selectedItem = document.querySelector(`.${this.id}-selected`);
   // Add show-card class
   selectedItem.classList.add("show-card");
+}
+
+function closeItem(e) {
+  // Grab the parent element from DOM
+  let parent = this.parentElement.parentElement;
+  // Add closecard class
+  parent.classList.remove("show-card");
+  closeVideoPlayer();
 }
 
 function playVideo(e) {
@@ -40,7 +41,7 @@ function playVideo(e) {
   vdo.style.display = "block";
 }
 
-window.onload = function () {
+window.onload = function closeVideoPlayer() {
   document.ondblclick = function (e) {
     if (e.target.id !== "video-container") {
       // set video_container's display equal to none

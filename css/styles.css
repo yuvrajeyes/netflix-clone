@@ -63,7 +63,7 @@ h3, p {
 .showcase-top {
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   height: 90px;
 }
 
@@ -87,7 +87,7 @@ h3, p {
   grid-template-columns: 1fr;
   justify-content: center;
   text-align: center;
-  z-index: 10;
+  z-index: 1;
 }
 
 .hero-header > div > h2 {
@@ -99,12 +99,12 @@ h3, p {
   font-size: 28px;
   padding-top: 55px;
   padding-bottom: 16px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .hero-header > h3 {
   padding-bottom: 16px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .cta {
@@ -112,7 +112,7 @@ h3, p {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
-  z-index: 10;
+  z-index: 1;
 }
 
 .cta-label {
@@ -252,11 +252,11 @@ ul {
 
 /**** SignIn & SignUP ****/
 #signinPage .showcase {
-  height: 100vh;
+  height: 100%;
 }
 
 #signupPage .showcase {
-  height: 110vh;
+  height: 110%;
 }
 
 .auth-container {
@@ -264,10 +264,10 @@ ul {
   position: relative;
   max-width: 380px;
   margin: 40px auto 0;
-  background-color: hsla(0deg, 0%, 0%, 0.7);
+  background-color: hsla(0deg, 0%, 0%, 0.8);
   width: 100%;
   height: 450px;
-  z-index: 10;
+  z-index: 1;
 }
 
 #signupPage .auth-container {
